@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "262163322745",
+    "project_id": "doctari-c18e7",
+    "storage_bucket": "doctari-c18e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262163322745:android:f56b927a6770dae8c801a8",
+        "android_client_info": {
+          "package_name": "com.doctari.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBitLd4ya-scw0z4NC6zTdgLAxlDnvrDRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

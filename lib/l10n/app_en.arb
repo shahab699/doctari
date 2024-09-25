@@ -1,0 +1,880 @@
+{
+
+    "@@locale": "en",
+    "language": "English",
+    "@language": {
+        "description": "the current Language"
+    },
+    "helloWorld": "Hello World!",
+    "@helloWorld" : {
+        "description": "A programmer greeting"
+    },
+    "snackBarChatPagePatientSC": "Failed to send message. Please try again",
+    "@snackBarChatPagePatientSC" : {
+        "description": "Failed to send message. Please try again"
+    },
+    "hintSndMsgChatPagePatientSC": "Send message",
+    "@hintSndMsgChatPagePatientSC" : {
+        "description": "Send message"
+    },
+    "errorSC": "Error",
+    "@errorSC" : {
+        "description": "Error"
+    },
+    "loadingSC": "Loading",
+    "@loadingSC" : {
+        "description": "Loading"
+    },
+    "confirmationConfirmationCardSC": "Confirmation",
+    "@confirmationConfirmationCardSC" : {
+        "description": "Confirmation"
+    },
+    "acceptConfirmationCardSC": "Accept",
+    "@acceptConfirmationCardSC" : {
+        "description": "Accept"
+    },
+    "rejectConfirmationCardSC": "Reject",
+    "@rejectConfirmationCardSC" : {
+        "description": "Reject"
+    },
+    "conversationConversationListPatientSC": "Conversations",
+    "@conversationConversationListPatientSC" : {
+        "description": "Conversations"
+    },
+    "errorLoadingConversationListPatientSC": "Error loading user",
+    "@errorLoadingConversationListPatientSC" : {
+        "description": "Error loading user"
+    },
+    "unknownUserConversationListPatientSC": "Unknown User",
+    "@unknownUserConversationListPatientSC" : {
+        "description": "Unknown User"
+    },
+    "nameNullConversationListPatientSC": "Patient Name is null",
+    "@nameNullConversationListPatientSC" : {
+        "description": "Patient Name is null"
+    },
+    "regSuccesDoctorApiServiceSC": "Registered Successfully",
+    "@regSuccesDoctorApiServiceSC" : {
+        "description": "Registered Successfully"
+    },
+    "errorDocRegDoctorApiServiceSC": "Error registering Doctor",
+    "@errorDocRegDoctorApiServiceSC" : {
+        "description": "Error registering Doctor"
+    },
+    "loginSuccDoctorApiServiceSC": "LoggedIn Successfully",
+    "@loginSuccDoctorApiServiceSC" : {
+        "description": "LoggedIn Successfully"
+    },
+    "usernotDocDoctorApiServiceSC": "User is not a doctor",
+    "@usernotDocDoctorApiServiceSC" : {
+        "description": "User is not a doctor"
+    },
+    "failedLoginDoctorApiServiceSC": "Failed to login",
+    "@failedLoginDoctorApiServiceSC" : {
+        "description": "Failed to login"
+    },
+    "passwordResetDoctorApiServiceSC": "Password Reset",
+    "@passwordResetDoctorApiServiceSC" : {
+        "description": "Password Reset"
+    },
+    "passwordReseEmailtDoctorApiServiceSC": "Password reset email sent to",
+    "@passwordReseEmailtDoctorApiServiceSC" : {
+        "description": "Password reset email sent to"
+    },
+    "okButtonDoctorApiServiceSC": "OK",
+    "@okButtonDoctorApiServiceSC" : {
+        "description": "OK"
+    },
+    "emailnotFoundDoctorApiServiceSC": "Email address not found. Please check and try again",
+    "@emailnotFoundDoctorApiServiceSC" : {
+        "description": "Email address not found. Please check and try again"
+    },
+    "enterCorrectEmailDoctorApiServiceSC": "Failed to reset password. Please enter correct email",
+    "@enterCorrectEmailDoctorApiServiceSC" : {
+        "description": "Failed to reset password. Please enter correct email"
+    },
+    "failedFetchDocDoctorApiServiceSC": "Failed to fetch doctor data. Status code",
+    "@failedFetchDocDoctorApiServiceSC" : {
+        "description": "Failed to fetch doctor data. Status code"
+    },
+    "appiontTypeAppiontmentDetailDocSecSC": "Appointment Type",
+    "@appiontTypeAppiontmentDetailDocSecSC" : {
+        "description": "Appointment Type"
+    },
+    "onlineConsultationAppiontmentDetailDocSecSC": "Online Consultation",
+    "@onlineConsultationAppiontmentDetailDocSecSC" : {
+        "description": "Online Consultation"
+    },
+    "appiontDayTimeAppiontmentDetailDocSecSC": "Appointment Day and Date",
+    "@appiontDayTimeAppiontmentDetailDocSecSC" : {
+        "description": "Appointment Day and Date"
+    },
+    "appointTimeAppiontmentDetailDocSecSC": "Appointment Time",
+    "@appointTimeAppiontmentDetailDocSecSC" : {
+        "description": "Appointment Time"
+    },
+    "appointReasonAppiontmentDetailDocSecSC": "Appointment Reason",
+    "@appointReasonAppiontmentDetailDocSecSC" : {
+        "description": "Appointment Reason"
+    },
+    "appointDetailsAppiontmentDetailDocSecSC": "Appointment Details",
+    "@appointDetailsAppiontmentDetailDocSecSC" : {
+        "description": "Appointment Details"
+    },
+    "chatAppiontmentDetailDocSecSC": "Chat",
+    "@chatAppiontmentDetailDocSecSC" : {
+        "description": "Chat"
+    },
+    "cancelAppiontmentDetailDocSecSC": "Cancel",
+    "@cancelAppiontmentDetailDocSecSC" : {
+        "description": "Cancel"
+    },
+    "rescheduleAppiontmentDetailDocSecSC": "Reschedule",
+    "@rescheduleAppiontmentDetailDocSecSC" : {
+        "description": "Reschedule"
+    },
+    "appointmentsMainDocShedularSC": "Appointments",
+    "@appointmentsMainDocShedularSC" : {
+        "description": "Appointments"
+    },
+    "upcomingMainDocShedularSC": "Upcoming",
+    "@upcomingMainDocShedularSC" : {
+        "description": "Upcoming"
+    },
+    "completedMainDocShedularSC": "Completed",
+    "@completedMainDocShedularSC" : {
+        "description": "Completed"
+    },
+    "personVisitCompletedAppionmentWidgetSC": "Video Call",
+    "@personVisitCompletedAppionmentWidgetSC" : {
+        "description": "Video Call"
+    },
+    "noAppiontavailableCompletedAppionmentPageSC": "No appointments available",
+    "@noAppiontavailableCompletedAppionmentPageSC" : {
+        "description": "No appointments available"
+    },
+    "specilistDentistBooknow1ItemWidgetSC": "Specilist Dentist",
+    "@specilistDentistBooknow1ItemWidgetSC" : {
+        "description": "Specilist Dentist"
+    },
+    "cardiologyCenterBooknow1ItemWidgetSC": "Cardiology Center",
+    "@cardiologyCenterBooknow1ItemWidgetSC" : {
+        "description": "Cardiology Center"
+    },
+    "bookNowBooknow1ItemWidgetSC": "Book Now",
+    "@bookNowBooknow1ItemWidgetSC" : {
+        "description": "Book Now"
+    },
+    "specilistCardiologyBooknow2ItemWidgetSC": "Specilist Cardiology",
+    "@specilistCardiologyBooknow2ItemWidgetSC" : {
+        "description": "Specilist Cardiology"
+    },
+    "upcomingConsultationCancelItemWidgetSC": "Upcoming Consultation",
+    "@upcomingConsultationCancelItemWidgetSC" : {
+        "description": "Upcoming Consultation"
+    },
+    "cardiologistCancelItemWidgetSC": "Cardiologist",
+    "@cardiologistCancelItemWidgetSC" : {
+        "description": "Cardiologist"
+    },
+    "nameDashboardAfterBookingScrnSC": "Name",
+    "@nameDashboardAfterBookingScrnSC" : {
+        "description": "Name"
+    },
+    "findDoctorDashboardAfterBookingScrnSC": "Find Your Doctor",
+    "@findDoctorDashboardAfterBookingScrnSC" : {
+        "description": "Find Your Doctor"
+    },
+    "specialtyDentistItemWidgetSC": "Specialty",
+    "@specialtyDentistItemWidgetSC" : {
+        "description": "Specialty"
+    },
+    "profileDocProfileScrenSC": "Profile",
+    "@profileDocProfileScrenSC" : {
+        "description": "Profile"
+    },
+    "personalInformationDocProfileScrenSC": "Personal information",
+    "@personalInformationDocProfileScrenSC" : {
+        "description": "Personal information"
+    },
+    "lastNameDoctorProfileScrenSC": "Last Name",
+    "@lastNameDoctorProfileScrenSC" : {
+        "description": "Last Name"
+    },
+    "contactNumberDoctorProfileScrenSC": "Contact Number",
+    "@contactNumberDoctorProfileScrenSC" : {
+        "description": "Contact Number"
+    },
+    "dateofBirthDoctorProfileScrenSC": "Date of birth",
+    "@dateofBirthDoctorProfileScrenSC" : {
+        "description": "Date of birth"
+    },
+    "genderDoctorProfileScrenSC": "Sex",
+    "@genderDoctorProfileScrenSC" : {
+        "description": "Sex"
+    },
+    "cityDoctorProfileScrenSC": "City",
+    "@cityDoctorProfileScrenSC" : {
+        "description": "City"
+    },
+    "documentNumberDoctorProfileScrenSC": "Document Number",
+    "@documentNumberDoctorProfileScrenSC" : {
+        "description": "Document Number"
+    },
+    "yearReceivedDoctorProfileScrenSC": "Year Received as Doctor",
+    "@yearReceivedDoctorProfileScrenSC" : {
+        "description": "Year Received as Doctor"
+    },
+    "yearCompletionDoctorProfileScrenSC": "Year of Completion of Speciality",
+    "@yearCompletionDoctorProfileScrenSC" : {
+        "description": "Year of Completion of Speciality"
+    },
+    "otherStudiesDoctorProfileScrenSC": "Other Studies",
+    "@otherStudiesDoctorProfileScrenSC" : {
+        "description": "Other Studies"
+    },
+    "signatureDoctorProfileScrenSC": "Signature",
+    "@signatureDoctorProfileScrenSC" : {
+        "description": "Signature"
+    },
+    "updateDoctorProfileScrenSC": "Update",
+    "@updateDoctorProfileScrenSC" : {
+        "description": "Update"
+    },
+    "errorUpdateprofileDoctorProfileScrenSC": "Error updating profile",
+    "@errorUpdateprofileDoctorProfileScrenSC" : {
+        "description": "Error updating profile"
+    },
+    "setupProfileDoctorProfileScrenSC": "Set up your profile",
+    "@setupProfileDoctorProfileScrenSC" : {
+        "description": "Set up your profile"
+    },
+    "updateYourProfileDoctorProfileScrenSC": "Update your profile to connect with your patients with better impression",
+    "@updateYourProfileDoctorProfileScrenSC" : {
+        "description": "Update your profile to connect with your patients with better impression"
+    },
+    "meDoctorProfileScrenSC": "Me",
+    "@meDoctorProfileScrenSC" : {
+        "description": "Me"
+    },
+    "upcomingAppointmentsDoctorDashboardSC": "Upcoming Appointments",
+    "@upcomingAppointmentsDoctorDashboardSC" : {
+        "description": "Upcoming Appointments"
+    },
+    "overviewDoctorDashboardSC": "Overview",
+    "@overviewDoctorDashboardSC" : {
+        "description": "Overview"
+    },
+    "noAppointAvailableUpcomingappiontmentDocSC": "No appointments available",
+    "@noAppointAvailableUpcomingappiontmentDocSC" : {
+        "description": "No appointments available"
+    },
+    "appointmentsDoctorMenuScreenSC": "Appointments",
+    "@appointmentsDoctorMenuScreenSC" : {
+        "description": "Appointments"
+    },
+    "notificationsDoctorMenuScreenSC": "Doctors",
+    "@notificationsDoctorMenuScreenSC" : {
+        "description": "Doctors"
+    },
+    "contactUsDoctorMenuScreenSC": "Contact Us",
+    "@contactUsDoctorMenuScreenSC" : {
+        "description": "Contact Us"
+    },
+    "changePasswordDoctorMenuScreenSC": "Change Password",
+    "@changePasswordDoctorMenuScreenSC" : {
+        "description": "Change Password"
+    },
+    "inProgressDoctorMenuScreenSC": "Its in Progress",
+    "@inProgressDoctorMenuScreenSC" : {
+        "description": "Its in Progress"
+    },
+    "logoutDoctorMenuScreenSC": "Logout",
+    "@logoutDoctorMenuScreenSC" : {
+        "description": "Logout"
+    },
+    "registerDocDoctorRegistrationSC": "Register as a Doctor",
+    "@registerDocDoctorRegistrationSC" : {
+        "description": "Register as a Doctor"
+    },
+    "snackbarfillDoctorRegistrationSC": "Please fill in all fields",
+    "@snackbarfillDoctorRegistrationSC" : {
+        "description": "Please fill in all fields"
+    },
+    "haveAccountDoctorRegistrationSC": "Have an account",
+    "@haveAccountDoctorRegistrationSC" : {
+        "description": "Have an account"
+    },
+    "logInDoctorRegistrationSC": "Log In",
+    "@logInDoctorRegistrationSC" : {
+        "description": "Log In"
+    },
+    "selectSpecializationDoctorRegistrationSC": "Select Specialization",
+    "@selectSpecializationDoctorRegistrationSC" : {
+        "description": "Select Specialization"
+    },
+    "phoneNumberDoctorRegistrationSC": "Phone Number",
+    "@phoneNumberDoctorRegistrationSC" : {
+        "description": "Phone Number"
+    },
+    "emailDoctorRegistrationSC": "Email",
+    "@emailDoctorRegistrationSC" : {
+        "description": "Email"
+    },
+    "licenseNumberDoctorRegistration2SC": "License Number",
+    "@licenseNumberDoctorRegistration2SC" : {
+        "description": "License Number"
+    },
+    "selectCountryDoctorRegistration2SC": "Select Country",
+    "@selectCountryDoctorRegistration2SC" : {
+        "description": "Select Country"
+    },
+    "passwordDoctorRegistration2SC": "Password",
+    "@passwordDoctorRegistration2SC" : {
+        "description": "Password"
+    },
+    "confirmPasswordDoctorRegistration2SC": "Confirm Password",
+    "@confirmPasswordDoctorRegistration2SC" : {
+        "description": "Confirm Password"
+    },
+    "termandServicesDoctorRegistration2SC": "I agree Terms of Service & Privacy Policy",
+    "@termandServicesDoctorRegistration2SC" : {
+        "description": "I agree Terms of Service & Privacy Policy"
+    },
+    "signupDoctorRegistration2SC": "Sign up",
+    "@signupDoctorRegistration2SC" : {
+        "description": "Sign up"
+    },
+    "todayDoctorNotificationScreenSC": "Today",
+    "@todayDoctorNotificationScreenSC" : {
+        "description": "Today"
+    },
+    "markReadDoctorNotificationScreenSC": "Mark all as read",
+    "@markReadDoctorNotificationScreenSC" : {
+        "description": "Mark all as read"
+    },
+    "yesterdayDoctorNotificationScreenSC": "YESTERDAY",
+    "@yesterdayDoctorNotificationScreenSC" : {
+        "description": "YESTERDAY"
+    },
+    "appointSuccessDoctorNotificationScreenSC": "Appointment success",
+    "@appointSuccessDoctorNotificationScreenSC" : {
+        "description": "Appointment success"
+    },
+    "successfullyBookedDoctorNotificationScreenSC": "You have successfully booked your appointment with Dr. David Patel",
+    "@successfullyBookedDoctorNotificationScreenSC" : {
+        "description": "You have successfully booked your appointment with Dr. David Patel"
+    },
+    "errorregPatientPatientApiServceSC": "Error registering patient",
+    "@errorregPatientPatientApiServceSC" : {
+        "description": "Error registering patient"
+    },
+    "loggedinSuccPatientApiServceSC": "LoggedIn Successfully",
+    "@loggedinSuccPatientApiServceSC" : {
+        "description": "LoggedIn Successfully"
+    },
+    "userNotPatientPatientApiServceSC": "User is not a patient",
+    "@userNotPatientPatientApiServceSC" : {
+        "description": "User is not a patient"
+    },
+    "failedLoginPatientApiServceSC": "Failed to login",
+    "@failedLoginPatientApiServceSC" : {
+        "description": "Failed to login"
+    },
+    "checkInternetPatientApiServceSC": "Failed to reset password. Please check your internet connection",
+    "@checkInternetPatientApiServceSC" : {
+        "description": "Failed to reset password. Please check your internet connection"
+    },
+    "appointCreatedSuccePatientApiServceSC": "Appointment created successfully",
+    "@appointCreatedSuccePatientApiServceSC" : {
+        "description": "Appointment created successfully"
+    },
+    "passwordChangePatientApiServceSC": "Password changed successfully",
+    "@passwordChangePatientApiServceSC" : {
+        "description": "Password changed successfully"
+    },
+    "failedPasswordChangePatientApiServceSC": "Failed to change password",
+    "@failedPasswordChangePatientApiServceSC" : {
+        "description": "Failed to change password"
+    },
+    "errorOccurredChangePatientApiServceSC": "An error occurred",
+    "@errorOccurredChangePatientApiServceSC" : {
+        "description": "An error occurred"
+    },
+    "allDocAllDoctorsPageSC": "All Doctors",
+    "@allDocAllDoctorsPageSC" : {
+        "description": "All Doctors"
+    },
+    "allAllDoctorsPageSC": "All ",
+    "@allAllDoctorsPageSC" : {
+        "description": "All "
+    },
+    "generalAllDoctorsPageSC": "General ",
+    "@generalAllDoctorsPageSC" : {
+        "description": "General "
+    },
+    "pediatrAllDoctorsPageSC": "PediatrÃ­a ",
+    "@pediatrAllDoctorsPageSC" : {
+        "description": "PediatrÃ­a "
+    },
+    "noroloAllDoctorsPageSC": "NeurologÃ­a ",
+    "@noroloAllDoctorsPageSC" : {
+        "description": "NeurologÃ­a "
+    },
+    "ginecolAllDoctorsPageSC": "GINECOLOGÃA ",
+    "@ginecolAllDoctorsPageSC" : {
+        "description": "GINECOLOGÃA "
+    },
+    "dermatoloAAllDoctorsPageSC": "DERMATOLOGÃA ",
+    "@dermatoloAAllDoctorsPageSC" : {
+        "description": "DERMATOLOGÃA "
+    },
+    "psiquiaAllDoctorsPageSC": "PSIQUIATRÃA ",
+    "@psiquiaAllDoctorsPageSC" : {
+        "description": "PSIQUIATRÃA "
+    },
+    "psicoloAllDoctorsPageSC": "PSICOLOGÃA ",
+    "@psicoloAllDoctorsPageSC" : {
+        "description": "PSICOLOGÃA "
+    },
+    "madicoLaboralAllDoctorsPageSC": "MÃDICO LABORAL ",
+    "@madicoLaboralAllDoctorsPageSC" : {
+        "description": "MÃDICO LABORAL "
+    },
+    "testAllDoctorsPageSC": "Test ",
+    "@testAllDoctorsPageSC" : {
+        "description": "Test "
+    },
+    "foundAllDoctorsPageSC": "found ",
+    "@foundAllDoctorsPageSC" : {
+        "description": "found "
+    },
+    "noDocAvaliableAllDoctorsPageSC": "No Doctors Avaliable ",
+    "@noDocAvaliableAllDoctorsPageSC" : {
+        "description": "No Doctors Avaliable "
+    },
+    "noImgAvaliableAllDoctorsPageSC": "No image available",
+    "@noImgAvaliableAllDoctorsPageSC" : {
+        "description": "No image available"
+    },
+    "medicinaGeneralAllDoctorsPageSC": "Medicina General",
+    "@medicinaGeneralAllDoctorsPageSC" : {
+        "description": "Medicina General"
+    },
+    "writeReasonlAllDoctorsPageSC": "Write reason for appointment",
+    "@writeReasonlAllDoctorsPageSC" : {
+        "description": "Write reason for appointment"
+    },
+    "selectDatelAllDoctorsPageSC": "Select Date",
+    "@selectDatelAllDoctorsPageSC" : {
+        "description": "Select Date"
+    },
+    "selectHourlAllDoctorsPageSC": "Select Hour",
+    "@selectHourlAllDoctorsPageSC" : {
+        "description": "Select Hour"
+    },
+    "nextAllDoctorsPageSC": "Next",
+    "@nextAllDoctorsPageSC" : {
+        "description": "Next"
+    },
+    "bookAppointmentAllDoctorsPageSC": "Book Appointment",
+    "@bookAppointmentAllDoctorsPageSC" : {
+        "description": "Book Appointment"
+    },
+    "closeBookAppointmentSecondPageSC": "Close",
+    "@closeBookAppointmentSecondPageSC" : {
+        "description": "Close"
+    },
+    "selectDiseasesBookAppointmentSecondPageSC": "Selected Diseases",
+    "@selectDiseasesBookAppointmentSecondPageSC" : {
+        "description": "Selected Diseases"
+    },
+    "selectedMedicationsBookAppointmentSecondPageSC": "Selected Medications",
+    "@selectedMedicationsBookAppointmentSecondPageSC" : {
+        "description": "Selected Medications"
+    },
+    "selecAllergiesBookAppointmentSecondPageSC": "Selected Allergies",
+    "@selecAllergiesBookAppointmentSecondPageSC" : {
+        "description": "Selected Allergies"
+    },
+    "confirmBookAppointmentSecondPageSC": "Confirm",
+    "@confirmBookAppointmentSecondPageSC" : {
+        "description": "Confirm"
+    },
+    "doctorDetailsDoctorSC": "Doctor Details",
+    "@doctorDetailsDoctorSC" : {
+        "description": "Doctor Details"
+    },
+    "appointmentPriceDoctorSC": "Appointment Price",
+    "@appointmentPriceDoctorSC" : {
+        "description": "Appointment Price"
+    },
+    "onlineDoctorSC": "Online",
+    "@onlineDoctorSC" : {
+        "description": "Online"
+    },
+    "inPersonDoctorSC": "In Person",
+    "@inPersonDoctorSC" : {
+        "description": "In Person"
+    },
+    "workingTimeDoctorDetailsScreenSC": "Working Time",
+    "@workingTimeDoctorDetailsScreenSC" : {
+        "description": "Working Time"
+    },
+    "pastConsultationsDoctorDetailsScreenSC": "Past Consultations",
+    "@pastConsultationsDoctorDetailsScreenSC" : {
+        "description": "Past Consultations"
+    },
+    "dayanddatePatientAppiontmentDetailsScrenSC": "Appointment Day and Date",
+    "@dayanddatePatientAppiontmentDetailsScrenSC" : {
+        "description": "Appointment Day and Date"
+    },
+    "goldenCardiologyPatientAppiontmentDetailsScrenSC": "Golden Cardiology Center",
+    "@goldenCardiologyPatientAppiontmentDetailsScrenSC" : {
+        "description": "Golden Cardiology Center"
+    },
+    "videoCallPatientAppiontmentDetailsScrenSC": "Video Call",
+    "@videoCallPatientAppiontmentDetailsScrenSC" : {
+        "description": "Video Call"
+    },
+    "paymentSuccessfulPaymentSuccessPopupSC": "Payment Successful",
+    "@paymentSuccessfulPaymentSuccessPopupSC" : {
+        "description": "Payment Successful"
+    },
+    "donePaymentSuccessPopupSC": "Done",
+    "@donePaymentSuccessPopupSC" : {
+        "description": "Done"
+    },
+    "rescheduleAppointPaymentSuccessPopupSC": "Reschedule Appointment",
+    "@rescheduleAppointPaymentSuccessPopupSC" : {
+        "description": "Reschedule Appointment"
+    },
+    "selectSpecialtyDashboardOneScreenSC": "select Specialty",
+    "@selectSpecialtyDashboardOneScreenSC" : {
+        "description": "select Specialty"
+    },
+    "lookingforDashboardOneScreenSC": "Looking for",
+    "@lookingforDashboardOneScreenSC" : {
+        "description": "Looking for"
+    },
+    "specialistDoctorsDashboardOneScreenSC": "Specialist Doctors",
+    "@specialistDoctorsDashboardOneScreenSC" : {
+        "description": "Specialist Doctors"
+    },
+    "topDoctorsDashboardOneScreenSC": "Schedule an appointment with our top doctors",
+    "@topDoctorsDashboardOneScreenSC" : {
+        "description": "Schedule an appointment with our top doctors"
+    },
+    "bestProfessionalsOnboardingScreenOneSC": "The best professionals",
+    "@bestProfessionalsOnboardingScreenOneSC" : {
+        "description": "The best professionals"
+    },
+    "doctariFindProfessionalOnboardingScreenOneSC": "At Doctari you find the best professionals, with warm and personalized attention from the comfort of your home.",
+    "@doctariFindProfessionalOnboardingScreenOneSC" : {
+        "description": "At Doctari you find the best professionals, with warm and personalized attention from the comfort of your home."
+    },
+    "getStartedOnboardingScreenOneSC": "Get Started",
+    "@getStartedOnboardingScreenOneSC" : {
+        "description": "Get Started"
+    },
+    "skipOnboardingScreenOneSC": "Skip",
+    "@skipOnboardingScreenOneSC" : {
+        "description": "Skip"
+    },
+    "itSimpleOnboardingScreenThreeSC": "It is simple!",
+    "@itSimpleOnboardingScreenThreeSC" : {
+        "description": "It is simple!"
+    },
+    "doctariisEasyOnboardingScreenThreeSC": "Doctari is easy to use and in a few minutes you will be able to receive the attention you need",
+    "@doctariisEasyOnboardingScreenThreeSC" : {
+        "description": "Doctari is easy to use and in a few minutes you will be able to receive the attention you need"
+    },
+    "getStartedOnboardingScreenThreeSC": "Get Started",
+    "@getStartedOnboardingScreenThreeSC" : {
+        "description": "Get Started"
+    },
+    "skipOnboardingScreenThreeSC": "Skip",
+    "@skipOnboardingScreenThreeSC" : {
+        "description": "Skip"
+    },
+    "specialistsWhereWhenOnboardingScreenTwoSC": "Specialists where and when you need them",
+    "@specialistsWhereWhenOnboardingScreenTwoSC" : {
+        "description": "Specialists where and when you need them"
+    },
+    "doctariGivesAccessOnboardingScreenTwoSC": "Doctari gives you access to specialists when you need it, avoid long waiting times and consult when you need it",
+    "@doctariGivesAccessOnboardingScreenTwoSC" : {
+        "description": "Doctari gives you access to specialists when you need it, avoid long waiting times and consult when you need it"
+    },
+    "getStartedOnboardingScreenTwoSC": "Get Started",
+    "@getStartedOnboardingScreenTwoSC" : {
+        "description": "Get Started"
+    },
+    "skipOnboardingScreenTwoSC": "Skip",
+    "@skipOnboardingScreenTwoSC" : {
+        "description": "Skip"
+    },
+    "registerPatientRegisterScreenSC": "Register as a Patient",
+    "@registerPatientRegisterScreenSC" : {
+        "description": "Register as a Patient"
+    },
+    "registerDoctorRegisterScreenSC": "Register as a Doctor",
+    "@registerDoctorRegisterScreenSC" : {
+        "description": "Register as a Doctor"
+    },
+    "loginAsRegisterScreenSC": "Login As",
+    "@loginAsRegisterScreenSC" : {
+        "description": "Login As"
+    },
+    "typeofLoginRegisterScreenSC": "What type of login you need",
+    "@typeofLoginRegisterScreenSC" : {
+        "description": "What type of login you need"
+    },
+    "asDoctorRegisterScreenSC": "As Doctor",
+    "@asDoctorRegisterScreenSC" : {
+        "description": "As Doctor"
+    },
+    "asPatientRegisterScreenSC": "As Patient",
+    "@asPatientRegisterScreenSC" : {
+        "description": "As Patient"
+    },
+    "doctariSplashScreenSC": "Doctari",
+    "@doctariSplashScreenSC" : {
+        "description": "Doctari"
+    },
+    "appointmentSuccessNotificationItemWidgetsSC": "Appointment Success",
+    "@appointmentSuccessNotificationItemWidgetsSC" : {
+        "description": "Appointment Success"
+    },
+    "haveSuccessfulybookNotificationItemWidgetsSC": "You have successfully booked your appointment with",
+    "@haveSuccessfulybookNotificationItemWidgetsSC" : {
+        "description": "You have successfully booked your appointment with"
+    },
+    "notificationNotificationScreenSC": "Notifications",
+    "@notificationNotificationScreenSC" : {
+        "description": "Notifications"
+    },
+    "profileUpdatedPatintProfileSC": "Profile updated successfully",
+    "@profileUpdatedPatintProfileSC" : {
+        "description": "Profile updated successfully"
+    },
+    "failedProfileUpdatedPatintProfileSC": "Failed to update profile",
+    "@failedProfileUpdatedPatintProfileSC" : {
+        "description": "Failed to update profile"
+    },
+    "errorProfileUpdatedPatintProfileSC": "Error updating profile",
+    "@errorProfileUpdatedPatintProfileSC" : {
+        "description": "Error updating profile"
+    },
+    "personalinformationPatintProfileSC": "Personal information",
+    "@personalinformationPatintProfileSC" : {
+        "description": "Personal information"
+    },
+    "setupProfilePatintProfileSC": "Set up your profile",
+    "@setupProfilePatintProfileSC" : {
+        "description": "Set up your profile"
+    },
+    "profiletoConnectPatintProfileSC": "Update your profile to connect with your patients with better impression",
+    "@profiletoConnectPatintProfileSC" : {
+        "description": "Update your profile to connect with your patients with better impression"
+    },
+    "writeMessageContactUsSC": "Write your message",
+    "@writeMessageContactUsSC" : {
+        "description": "Write your message"
+    },
+    "submitContactUsSC": "Submit",
+    "@submitContactUsSC" : {
+        "description": "Submit"
+    },
+    "settingsSettingScreenSC": "Settings",
+    "@settingsSettingScreenSC" : {
+        "description": "Settings"
+    },
+    "currentPasswordSettingScreenSC": "Current Password",
+    "@currentPasswordSettingScreenSC" : {
+        "description": "Current Password"
+    },
+    "enterCurrentPasswordSettingScreenSC": "Please enter your Current password",
+    "@enterCurrentPasswordSettingScreenSC" : {
+        "description": "Please enter your Current password"
+    },
+    "newPasswordSettingScreenSC": "New Password",
+    "@newPasswordSettingScreenSC" : {
+        "description": "New Password"
+    },
+    "enterNewPasswordSettingScreenSC": "Please enter your New password",
+    "@enterNewPasswordSettingScreenSC" : {
+        "description": "Please enter your New password"
+    },
+    "confirmPasswordSettingScreenSC": "Confirm Password",
+    "@confirmPasswordSettingScreenSC" : {
+        "description": "Confirm Password"
+    },
+    "enterNewPasswordAgainSettingScreenSC": "Please enter your New password again",
+    "@enterNewPasswordAgainSettingScreenSC" : {
+        "description": "Please enter your New password again"
+    },
+    "donotMatchSettingScreenSC": "New password and Confirm password do not match",
+    "@donotMatchSettingScreenSC" : {
+        "description": "New password and Confirm password do not match"
+    },
+    "resetPasswordBottomSheetSC": "Reset Password",
+    "@resetPasswordBottomSheetSC" : {
+        "description": "Reset Password"
+    },
+    "setNewPasswordBottomSheetSC": "Set the new password for your account so you can",
+    "@setNewPasswordBottomSheetSC" : {
+        "description": "Set the new password for your account so you can"
+    },
+    "loginandAccessBottomSheetSC": "login and access all the features",
+    "@loginandAccessBottomSheetSC" : {
+        "description": "login and access all the features"
+    },
+    "updatePasswordBottomSheetSC": "Update Password",
+    "@updatePasswordBottomSheetSC" : {
+        "description": "Update Password"
+    },
+    "oldPasswordBottomSheetSC": "Old Password",
+    "@oldPasswordBottomSheetSC" : {
+        "description": "Old Password"
+    },
+    "newPasswordBottomSheetSC": "New Password",
+    "@newPasswordBottomSheetSC" : {
+        "description": "New Password"
+    },
+    "enterCodeForgotPasswordBottomSheetSC": "Enter 4 digit code",
+    "@enterCodeForgotPasswordBottomSheetSC" : {
+        "description": "Enter 4 digit code"
+    },
+    "sentCodeForgotPasswordBottomSheetSC": "We have sent a 4-digit code to your email",
+    "@sentCodeForgotPasswordBottomSheetSC" : {
+        "description": "We have sent a 4-digit code to your email"
+    },
+    "continueForgotPasswordBottomSheet2SC": "Continue",
+    "@continueForgotPasswordBottomSheet2SC" : {
+        "description": "Continue"
+    },
+    "forgotPasswordForgotPasswordSC": "Forget password",
+    "@forgotPasswordForgotPasswordSC" : {
+        "description": "Forget password"
+    },
+    "verificationEmailForgotPasswordSC": "Enter your email for the verification process we will send a 4-digit code to your email",
+    "@verificationEmailForgotPasswordSC" : {
+        "description": "Enter your email for the verification process we will send a 4-digit code to your email"
+    },
+    "sendEmailForgotPasswordSC": "Send Email",
+    "@sendEmailForgotPasswordSC" : {
+        "description": "Send Email"
+    },
+    "welcomeDocLoginScreendSC": "Welcome Doctor",
+    "@welcomeDocLoginScreendSC" : {
+        "description": "Welcome Doctor"
+    },
+    "dontAccountLoginScreendSC": "Don’t have an account",
+    "@dontAccountLoginScreendSC" : {
+        "description": "Don’t have an account"
+    },
+    "joinUsLoginScreendSC": "Join Us",
+    "@joinUsLoginScreendSC" : {
+        "description": "Join Us"
+    },
+    "signInLoginScreendSC": "Sign In",
+    "@signInLoginScreendSC" : {
+        "description": "Sign In"
+    },
+    "registerPatientSignUpDoctorScreenSC": "Register as a Patient",
+    "@registerPatientSignUpDoctorScreenSC" : {
+        "description": "Register as a Patient"
+    },
+    "registerDocSignUpDoctorScreenSC": "Register as a Doctor",
+    "@registerDocSignUpDoctorScreenSC" : {
+        "description": "Register as a Doctor"
+    },
+    "findSignUpScreenOnePatientSC": "Find",
+    "@findSignUpScreenOnePatientSC" : {
+        "description": "Find"
+    },
+    "doctorsSignUpScreenOnePatientSC": "Doctors",
+    "@doctorsSignUpScreenOnePatientSC" : {
+        "description": "Doctors"
+    },
+    "bookSignUpScreenOnePatientSC": "Book",
+    "@bookSignUpScreenOnePatientSC" : {
+        "description": "Book"
+    },
+    "appointmentsSignUpScreenOnePatientSC": "Appointments",
+    "@appointmentsSignUpScreenOnePatientSC" : {
+        "description": "Appointments"
+    },
+    "documentNumberSignUpScreenOnePatientSC": "Document Number",
+    "@Document NumberSignUpScreenOnePatientSC" : {
+        "description": "Document Number"
+    },
+    "welcomeBackPatientLoginScreenSC": "Welcome back",
+    "@welcomeBackPatientLoginScreenSC" : {
+        "description": "Welcome back"
+    },
+    "bottomSheetPatientLoginScreenSC": "Bottom Sheet is Opened or Clicked",
+    "@bottomSheetPatientLoginScreenSC" : {
+        "description": "Bottom Sheet is Opened or Clicked"
+    },
+    "noConversationsFoundConversationListSC": "No conversations found",
+    "@noConversationsFoundConversationListSC" : {
+        "description": "No conversations found"
+    },
+    "doctorTimeSlotDoctorMenuScreenSC": "Create Time Slot",
+    "@doctorTimeSlotDoctorMenuScreenSC" : {
+        "description": "Create Time Slot"
+    },
+    "createdTimeSlotDoctorMenuScreenSC": "Doctor Time Slot",
+    "@createdTimeSlotDoctorMenuScreenSC" : {
+        "description": "Doctor Time Slot"
+    },
+    "languageChangeSC": "Language Change",
+    "@languageChangeSC" : {
+        "description": "Language Change"
+    },
+    "paymentMethodSC": "Payment Method",
+    "@paymentMethodSC" : {
+        "description": "Payment Method"
+    },
+    "proceedPaymentdSC": "Proceed Payment",
+    "@proceedPaymentdSC" : {
+        "description": "Proceed Payment"
+    },
+    "hi": "Hi",
+    "@hi": {
+        "description": "Hi"
+    },
+    "english": "English",
+    "@english": {
+        "description": "English"
+    },
+    "spanish": "Spanish",
+    "@spanish": {
+        "description": "Spanish"
+    },
+    "save": "Save",
+    "@save": {
+        "description": "Save"
+    },
+    "futureAppointments": "Future Appointments",
+    "@futureAppointments": {
+        "description": "Future Appointments"
+    },
+    "pastAppointments": "Past Appointments",
+    "@pastAppointments": {
+        "description": "Past Appointments"
+    },
+    "title": "Title",
+    "@title": {
+        "description": "Title"
+    },
+    "age": "Age",
+    "@title": {
+        "description": "Age"
+    }
+
+
+
+
+}
