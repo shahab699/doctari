@@ -60,6 +60,7 @@ class CustomPopupReschedule extends StatelessWidget {
                     CustomTextStyles.titleMediumOnErrorContainerSemiBold18,
                 onPressed: () {
                   Navigator.pop(context);
+                  Navigator.pop(context);
                 },
               ),
               // SizedBox(height: 10),

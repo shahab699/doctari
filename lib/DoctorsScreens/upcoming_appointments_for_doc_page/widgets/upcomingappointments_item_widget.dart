@@ -513,7 +513,7 @@ class _UpcomingappointmentsItemWidgetState
                               '',
                           profile: widget.appointmentData["patient"]
                               ["profile_picture"]??"",
-                          appiontmentId: widget.appointmentData['id'],
+                          appiontmentId: widget.appointmentData['id'], doctorEmail:  widget.appointmentData['doctor']['email'],
                         )),
               );
             },
@@ -700,7 +700,7 @@ class _UpcomingappointmentsItemWidgetState
                         widget.appointmentData['doctor']['full_name'] ?? '',
                     profile: widget.appointmentData["patient"]
                         ["profile_picture"]??"",
-                    appiontmentId: widget.appointmentData['id'],
+                    appiontmentId: widget.appointmentData['id'], doctorEmail: widget.appointmentData['doctor']['email'] ?? '',
                   )),
         );
       },

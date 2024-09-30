@@ -131,6 +131,7 @@ dependencies:
   country_icons: ^3.0.0
   zego_zimkit: ^1.18.10
   firebase_storage: ^11.7.7
+  jitsi_meet_flutter_sdk: ^10.2.1
 
 
 dev_dependencies: 

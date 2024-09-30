@@ -42,6 +42,7 @@ class CardsItemWidget extends StatelessWidget {
                     //docname: docName,
                     patientId: appointmentData['patient']['id'],
                     patientName: appointmentData['patient']['full_name'],
+                    email: appointmentData['patient']['email'],
                   ),
                 ),
               );
@@ -65,6 +66,7 @@ class CardsItemWidget extends StatelessWidget {
                           docname: appointmentData['doctor']['last_name'],
                           patientId: appointmentData['patient']['id'],
                           patientName: appointmentData['patient']['full_name'],
+                          email: appointmentData['patient']['email'],
                         ),
                       ),
                     );
@@ -252,6 +254,7 @@ class CardsItemWidget extends StatelessWidget {
                 docname: docName,
                 patientId: appointmentData['patient']['id'],
                 patientName: appointmentData['patient']['full_name'],
+                email: appointmentData['patient']['email'],
               ),
             ),
           );

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:doctari/core/app_export.dart';
+import 'package:doctari/core/utils/constantid.dart';
 import 'package:doctari/patientFlow/all_doctors_and_reschedule/appointments_and_completed_appointments/select_date_appointment_type/widget/date_picker.dart';
 import 'package:doctari/patientFlow/all_doctors_and_reschedule/appointments_and_completed_appointments/select_date_appointment_type/widget/hours_tab.dart';
 import 'package:doctari/patientFlow/all_doctors_and_reschedule/appointments_and_completed_appointments/select_date_appointment_type/widget/reschedule_pop_up.dart';
@@ -45,7 +46,8 @@ class _DateAndAppointmentState extends State<DateAndAppointment> {
       String date,
       String token,
       String appointmentId) async {
-    final url = Uri.parse('https://api-b2c-refactor.doctari.com/appointment/full/$appointmentId/');
+    // final url = Uri.parse('https://api-b2c-refactor.doctari.com/appointment/full/$appointmentId/');
+    final url = Uri.parse("${Constant.rescheduleAppointmentUrl}$appointmentId/");
     final headers = {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer $token',

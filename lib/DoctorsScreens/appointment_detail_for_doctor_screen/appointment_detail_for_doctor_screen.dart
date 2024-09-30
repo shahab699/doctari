@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:doctari/Provider/user_id_provider.dart';
 import 'package:doctari/chat/chat_page.dart';
+import 'package:doctari/meeting_service/jitsi_meeting_service.dart';
 import 'package:doctari/patientFlow/all_doctors_and_reschedule/appointments_and_completed_appointments/select_date_appointment_type/select_date_and_appointment_type.dart';
 import 'package:doctari/sessionManager/session_manager.dart';
 import 'package:doctari/widgets/app_bar/custom_app_bar.dart';
@@ -15,6 +16,8 @@ import 'package:provider/provider.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:http/http.dart' as http;
+import 'package:jitsi_meet_flutter_sdk/jitsi_meet_flutter_sdk.dart';
+
 
 class AppointmentDetailForDoctorScreen extends StatelessWidget {
   final int patientID;
@@ -26,6 +29,7 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
   final String date;
   final String time;
   final String doctorName;
+  final String doctorEmail;
   final String profile;
   final int appiontmentId;
   const AppointmentDetailForDoctorScreen(
@@ -41,7 +45,7 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
       required this.profile,
       required this.appiontmentId,
       //required this.appointmentData,
-      Key? key})
+      Key? key, required this.doctorEmail})
       : super(
           key: key,
         );
@@ -68,6 +72,8 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
       print('Failed to cancel appointment: ${response.body}');
     }
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -283,24 +289,49 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
   }
 
   /// Section Widget
+  // Widget _buildVideoCall(BuildContext context) {
+  //   return Expanded(
+  //     child: actionButton(true, patientID.toString(), patientName),
+  //     // CustomElevatedButton(
+  //     //   height: 47.v,
+  //     //   text: "Video Call",
+  //     //   margin: EdgeInsets.only(left: 24.h),
+  //     //   leftIcon: Container(
+  //     //     margin: EdgeInsets.only(right: 18.h),
+  //     //     child: CustomImageView(
+  //     //       imagePath: ImageConstant.imgUpload,
+  //     //       height: 15.v,
+  //     //       width: 27.h,
+  //     //       color: Colors.grey.shade500,
+  //     //     ),
+  //     //   ),
+  //     //   buttonStyle: CustomButtonStyles.fillGray,
+  //     // ),
+  //   );
+  // }
   Widget _buildVideoCall(BuildContext context) {
     return Expanded(
-      child: actionButton(true, patientID.toString(), patientName),
-      // CustomElevatedButton(
-      //   height: 47.v,
-      //   text: "Video Call",
-      //   margin: EdgeInsets.only(left: 24.h),
-      //   leftIcon: Container(
-      //     margin: EdgeInsets.only(right: 18.h),
-      //     child: CustomImageView(
-      //       imagePath: ImageConstant.imgUpload,
-      //       height: 15.v,
-      //       width: 27.h,
-      //       color: Colors.grey.shade500,
-      //     ),
-      //   ),
-      //   buttonStyle: CustomButtonStyles.fillGray,
-      // ),
+      child:
+      CustomElevatedButton(
+        height: 47.v,
+        text: "Video Call",
+        margin: EdgeInsets.only(left: 24.h),
+        leftIcon: Container(
+          margin: EdgeInsets.only(right: 18.h),
+          child: CustomImageView(
+            imagePath: ImageConstant.imgUpload,
+            height: 15.v,
+            width: 27.h,
+            color: Colors.grey.shade500,
+          ),
+        ),
+        buttonStyle: CustomButtonStyles.fillGray,
+        onPressed: () async {
+          const String defaultRoomName = 'DifferentTerrainsConflictEither';
+        await MeetingService().joinMeeting(defaultRoomName, doctorName, doctorEmail);
+
+        },
+      ),
     );
   }
 

@@ -14,9 +14,11 @@ import 'package:doctari/core/app_export.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../../../../meeting_service/jitsi_meeting_service.dart';
+
 class DoctorScreen extends StatefulWidget {
   final int? docId;
-  final String? docname;
+  final String? docname,email;
   final int patientId;
   final String patientName;
 
@@ -25,7 +27,7 @@ class DoctorScreen extends StatefulWidget {
       this.docId,
       this.docname,
       required this.patientId,
-      required this.patientName})
+      required this.patientName, this.email})
       : super(
           key: key,
         );
@@ -101,7 +103,7 @@ class _DoctorScreenState extends State<DoctorScreen> {
                       height: 20,
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         _buildChat(context, widget.docId!),
                         _buildBookAppointment(context),
@@ -404,7 +406,6 @@ class _DoctorScreenState extends State<DoctorScreen> {
   Widget _buildChat(BuildContext context, int doctorId) {
     return Expanded(
       child: CustomElevatedButton(
-        height: 47.v,
         text: "${AppLocalizations.of(context)!.chatAppiontmentDetailDocSecSC}",
         onPressed: () {
           print("chat button got pressed");
@@ -436,24 +437,49 @@ class _DoctorScreenState extends State<DoctorScreen> {
   /// Section Widget
 
   Widget _buildBookAppointment(BuildContext context) {
-    return actionButton(true, widget.docId!, widget.docname!);
-    // CustomElevatedButton(
-    //   onPressed: () {
-    //     Navigator.push(
-    //         context,
-    //         MaterialPageRoute(
-    //             builder: (context) => BookingAppointmentDetails(
-    //                   doctorId: widget.docId!,
-    //                 )));
-    //   },
-    //   text: "Book Appointment",
-    //   margin: EdgeInsets.only(
-    //     left: 24.h,
-    //     right: 24.h,
-    //     bottom: 25.v,
+    // return actionButton(true, widget.docId!, widget.docname!);
+
+    return Expanded(
+      child:
+      CustomElevatedButton(
+        text: "Video Call",
+        margin: EdgeInsets.only(left: 24.h,right: 24.h),
+        leftIcon: Container(
+          margin: EdgeInsets.only(right: 18.h),
+          child: CustomImageView(
+            imagePath: ImageConstant.imgUpload,
+            height: 15.v,
+            width: 27.h,
+            color: Colors.grey.shade500,
+          ),
+        ),
+        buttonStyle: CustomButtonStyles.fillGray,
+        onPressed: () async {
+          const String defaultRoomName = 'DifferentTerrainsConflictEither';
+          await MeetingService().joinMeeting(defaultRoomName, widget.patientName, widget.email??"");
+
+        },
+      ),
+    );
+    // return Expanded(
+    //   child: CustomElevatedButton(
+    //     onPressed: () {
+    //       Navigator.push(
+    //           context,
+    //           MaterialPageRoute(
+    //               builder: (context) => BookingAppointmentDetails(
+    //                     doctorId: widget.docId!,
+    //                   )));
+    //     },
+    //     text: "Book Appointment",
+    //     margin: EdgeInsets.only(
+    //       left: 24.h,
+    //       right: 24.h,
+    //       bottom: 25.v,
+    //     ),
+    //     buttonStyle: CustomButtonStyles.fillPrimary,
+    //     buttonTextStyle: CustomTextStyles.titleMediumOnErrorContainerSemiBold18,
     //   ),
-    //   buttonStyle: CustomButtonStyles.fillPrimary,
-    //   buttonTextStyle: CustomTextStyles.titleMediumOnErrorContainerSemiBold18,
     // );
   }
 
