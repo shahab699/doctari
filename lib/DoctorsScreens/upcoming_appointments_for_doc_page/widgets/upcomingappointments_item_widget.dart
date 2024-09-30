@@ -512,7 +512,7 @@ class _UpcomingappointmentsItemWidgetState
                                   ['full_name'] ??
                               '',
                           profile: widget.appointmentData["patient"]
-                              ["profile_picture"]["url"],
+                              ["profile_picture"]??"",
                           appiontmentId: widget.appointmentData['id'],
                         )),
               );
@@ -537,15 +537,14 @@ class _UpcomingappointmentsItemWidgetState
                         if (isLoading) // Replace `isLoading` with your actual loading state variable
                           CircularProgressIndicator(), // Adjust properties if needed
                         if (!isLoading &&
-                            widget.appointmentData["patient"]["profile_picture"]
-                                    ["url"] !=
+                            widget.appointmentData["patient"]["profile_picture"]!=
                                 null)
                           Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Image.network(
-                              '${widget.appointmentData["patient"]["profile_picture"]["url"]}',
+                              '${widget.appointmentData["patient"]["profile_picture"]}',
                               height: 109.adaptSize,
                               width: 109.adaptSize,
                               fit: BoxFit.fill,
@@ -700,7 +699,7 @@ class _UpcomingappointmentsItemWidgetState
                     doctorName:
                         widget.appointmentData['doctor']['full_name'] ?? '',
                     profile: widget.appointmentData["patient"]
-                        ["profile_picture"]["url"],
+                        ["profile_picture"]??"",
                     appiontmentId: widget.appointmentData['id'],
                   )),
         );
@@ -718,7 +717,7 @@ class _UpcomingappointmentsItemWidgetState
     String token,
   ) async {
     final url =
-        'https://api-b2c-refactor.doctari.com/appointment/full/$appointmentId';
+        'https://api-b2c-refactor.doctari.com/appointment/full/$appointmentId/';
 
     final response = await http.patch(
       Uri.parse(url),

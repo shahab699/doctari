@@ -342,7 +342,7 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => DateAndAppointment(),
+              builder: (context) => DateAndAppointment(appointmentId: appiontmentId.toString(),),
             ));
       },
       height: 54.v,
@@ -402,7 +402,7 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
               fit: BoxFit.fill,
             )
           : CustomImageView(
-              imagePath: ImageConstant.imgImage2,
+              imagePath: ImageConstant.dummyNetworkProfileAvatar,
               height: 109.adaptSize,
               width: 109.adaptSize,
               radius: BorderRadius.circular(

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:doctari/core/app_export.dart';
 import 'package:doctari/patientFlow/all_doctors_and_reschedule/appointments_and_completed_appointments/select_date_appointment_type/widget/date_picker.dart';
 import 'package:doctari/patientFlow/all_doctors_and_reschedule/appointments_and_completed_appointments/select_date_appointment_type/widget/hours_tab.dart';
@@ -7,11 +9,22 @@ import 'package:doctari/widgets/app_bar/appbar_subtitle_seven.dart';
 import 'package:doctari/widgets/app_bar/custom_app_bar.dart';
 import 'package:doctari/widgets/custom_elevated_button.dart';
 import 'package:doctari/widgets/custom_text_form_field.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
-class DateAndAppointment extends StatelessWidget {
-  DateAndAppointment({Key? key}) : super(key: key);
+import '../../../../sessionManager/session_manager.dart';
 
+class DateAndAppointment extends StatefulWidget {
+  final String appointmentId;
+  DateAndAppointment({Key? key, required this.appointmentId}) : super(key: key);
+
+  @override
+  State<DateAndAppointment> createState() => _DateAndAppointmentState();
+}
+
+class _DateAndAppointmentState extends State<DateAndAppointment> {
+  DateTime? _selectedDate;
+  String? _selectedTime;
   final TextEditingController _appointmentReasonControll =
       TextEditingController();
 
@@ -25,6 +38,73 @@ class DateAndAppointment extends StatelessWidget {
     debugPrint("nextSevenDays: $nextSevenDays");
 
     return nextSevenDays;
+  }
+
+  Future<Map<String, dynamic>?> rescheduleAppointment(
+      BuildContext context,
+      String date,
+      String token,
+      String appointmentId) async {
+    final url = Uri.parse('https://api-b2c-refactor.doctari.com/appointment/full/$appointmentId/');
+    final headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer $token',
+    };
+    final body = json.encode({
+      'date': date,
+    });
+
+    try {
+      final response = await http.patch(url, headers: headers, body: body);
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        print('Appointment rescheduled successfully');
+        print('Response body: ${response.body}');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              'Appointment rescheduled successfully',
+              style: TextStyle(color: Colors.white),
+            ),
+            backgroundColor: Colors.green,
+          ),
+        );
+
+        final responseData = json.decode(response.body);
+
+        return {
+          'doctorName': "doctorName",
+          'appointmentDate': "appointmentDate",
+          'appointmentTime': "appointmentTime",
+        };
+      } else {
+        print('Failed to reschedule appointment');
+        print('Status code: ${response.statusCode}');
+        print('Response body: ${response.body}');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              'Failed to reschedule appointment',
+              style: TextStyle(color: Colors.white),
+            ),
+            backgroundColor: Colors.red,
+          ),
+        );
+        return null;
+      }
+    } catch (e) {
+      print('Error occurred: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'An error occurred. Please try again.',
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.red,
+        ),
+      );
+      return null;
+    }
   }
 
   @override
@@ -120,6 +200,9 @@ class DateAndAppointment extends StatelessWidget {
                 // height: 300, // Provide a fixed height
                 child: CalendarWidget(
                   onDateSelected: (DateTime selectedDate) {
+                    setState(() {
+                      _selectedDate = selectedDate;
+                    });
                     // Handle the selected date here
                     print("Selected Date: $selectedDate");
                   },
@@ -141,7 +224,9 @@ class DateAndAppointment extends StatelessWidget {
               HourstabsForAppointmentWidget(
                 onTimeSelected: (selectedTime) {
                   // Handle the selected time here
-                  selectedTime = selectedTime;
+                  setState(() {
+                    _selectedTime = selectedTime;
+                  });
                   print("Selected Time: $selectedTime");
                 },
               ),
@@ -195,19 +280,45 @@ class DateAndAppointment extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20),
       child: CustomElevatedButton(
-        // height: 54.v,
         text: "Reschedule",
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return CustomPopupReschedule();
-            },
+        onPressed: () async { // Make the onPressed callback asynchronous
+          if (_selectedDate == null || _selectedTime == null) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(
+                  'Please select both date and time.',
+                  style: TextStyle(color: Colors.white),
+                ),
+                backgroundColor: Colors.red,
+              ),
+            );
+            return;
+          }
+
+          DateTime combinedDateTime = _combineDateAndTime(_selectedDate!, _selectedTime!);
+
+          String formattedDate = combinedDateTime.toIso8601String();
+
+          String? userToken = SessionManager.getUserToken();
+
+          Map<String, dynamic>? rescheduleResult = await rescheduleAppointment(
+            context,
+            formattedDate,
+            userToken ?? "",
+            widget.appointmentId,
           );
+
+          if (rescheduleResult != null) {
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return CustomPopupReschedule(
+                );
+              },
+            );
+          }
         },
         margin: EdgeInsets.only(
-          // left: 24.h,
-          // right: 24.h,
           bottom: 10.v,
         ),
         buttonStyle: CustomButtonStyles.fillPrimary,
@@ -215,6 +326,58 @@ class DateAndAppointment extends StatelessWidget {
       ),
     );
   }
+
+  // Widget _buildConfirm(BuildContext context) {
+  //   return Container(
+  //     margin: EdgeInsets.symmetric(horizontal: 20),
+  //     child: CustomElevatedButton(
+  //       // height: 54.v,
+  //       text: "Reschedule",
+  //       onPressed: () {
+  //         if (_selectedDate == null || _selectedTime == null) {
+  //           ScaffoldMessenger.of(context).showSnackBar(
+  //             SnackBar(
+  //               content: Text(
+  //                 'Please select both date and time.',
+  //                 style: TextStyle(color: Colors.white),
+  //               ),
+  //               backgroundColor: Colors.red,
+  //             ),
+  //           );
+  //           return;
+  //         }
+  //
+  //         DateTime combinedDateTime = _combineDateAndTime(_selectedDate!, _selectedTime!);
+  //
+  //         String formattedDate = combinedDateTime.toIso8601String();
+  //
+  //         String? userToken = SessionManager.getUserToken();
+  //
+  //         rescheduleAppointment(
+  //           context,
+  //           formattedDate,
+  //           userToken??"",
+  //           widget.appointmentId,
+  //         );
+  //       },
+  //       // onPressed: () {
+  //       //   showDialog(
+  //       //     context: context,
+  //       //     builder: (BuildContext context) {
+  //       //       return CustomPopupReschedule();
+  //       //     },
+  //       //   );
+  //       // },
+  //       margin: EdgeInsets.only(
+  //         // left: 24.h,
+  //         // right: 24.h,
+  //         bottom: 10.v,
+  //       ),
+  //       buttonStyle: CustomButtonStyles.fillPrimary,
+  //       buttonTextStyle: CustomTextStyles.titleMediumOnErrorContainerSemiBold18,
+  //     ),
+  //   );
+  // }
 
   /// Section Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
@@ -237,4 +400,27 @@ class DateAndAppointment extends StatelessWidget {
       ),
     );
   }
+
+  DateTime _combineDateAndTime(DateTime date, String time) {
+    // Assuming time is in format "08:00 AM"
+    final timeParts = time.split(' ');
+    final hourMin = timeParts[0].split(':');
+    int hour = int.parse(hourMin[0]);
+    int minute = int.parse(hourMin[1]);
+
+    if (timeParts[1] == 'PM' && hour != 12) {
+      hour += 12;
+    } else if (timeParts[1] == 'AM' && hour == 12) {
+      hour = 0;
+    }
+
+    return DateTime(
+      date.year,
+      date.month,
+      date.day,
+      hour,
+      minute,
+    );
+  }
+
 }

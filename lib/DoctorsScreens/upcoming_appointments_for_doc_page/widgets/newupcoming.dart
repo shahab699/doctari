@@ -309,10 +309,13 @@ class _PastNotDoneAppointmentsForDocPagesDoc
             child: Column(
               children: [
                 pastAppointments.isEmpty
-                    ? Text(
-                  "${AppLocalizations.of(context)!.noAppointAvailableUpcomingappiontmentDocSC}",
-                  style: TextStyle(fontSize: 16, color: Colors.black54),
-                )
+                    ? Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Text(
+                                        "${AppLocalizations.of(context)!.noAppointAvailableUpcomingappiontmentDocSC}",
+                                        style: TextStyle(fontSize: 16, color: Colors.black54),
+                                      ),
+                    )
                     :
                 _buildAppointmentsList(
                   context,

@@ -44,15 +44,15 @@ class CustomPopupReschedule extends StatelessWidget {
                     color: Colors.black,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
-              Text(
-                'Your appointment with Dr. Aaron is confirmed for September 30, 2024, at 03:00 PM.',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: 20,
-              ),
+              // SizedBox(height: 10),
+              // Text(
+              //   'Your appointment with Dr. Aaron is confirmed for September 30, 2024, at 03:00 PM.',
+              //   textAlign: TextAlign.center,
+              //   style: TextStyle(fontSize: 12, color: Colors.grey, fontWeight: FontWeight.bold),
+              // ),
+              // SizedBox(
+              //   height: 20,
+              // ),
               CustomElevatedButton(
                 text: "Done",
                 buttonStyle: CustomButtonStyles.fillPrimary,
