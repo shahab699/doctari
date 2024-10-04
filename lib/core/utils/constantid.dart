@@ -6,6 +6,7 @@ class Constant {
   ///APIs
   static const String baseUrl = 'https://api-b2c-refactor.doctari.com/appointment/';
   static const String rescheduleAppointmentUrl = '${baseUrl}full/';
+  static const String cancelAppointmentUrl = '${baseUrl}full/';
 
 
 

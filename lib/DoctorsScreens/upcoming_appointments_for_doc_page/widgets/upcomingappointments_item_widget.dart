@@ -419,6 +419,8 @@ import 'package:doctari/core/app_export.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:http/http.dart' as http;
 
+import '../../../core/utils/constantid.dart';
+
 class UpcomingappointmentsItemWidget extends StatefulWidget {
   final Map<String, dynamic> appointmentData;
   final String date;
@@ -717,7 +719,7 @@ class _UpcomingappointmentsItemWidgetState
     String token,
   ) async {
     final url =
-        'https://api-b2c-refactor.doctari.com/appointment/full/$appointmentId/';
+        '${Constant.cancelAppointmentUrl}$appointmentId/';
 
     final response = await http.patch(
       Uri.parse(url),

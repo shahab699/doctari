@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:doctari/Provider/user_id_provider.dart';
 import 'package:doctari/chat/chat_page.dart';
+import 'package:doctari/core/utils/constantid.dart';
 import 'package:doctari/meeting_service/jitsi_meeting_service.dart';
 import 'package:doctari/patientFlow/all_doctors_and_reschedule/appointments_and_completed_appointments/select_date_appointment_type/select_date_and_appointment_type.dart';
 import 'package:doctari/sessionManager/session_manager.dart';
@@ -19,7 +20,7 @@ import 'package:http/http.dart' as http;
 import 'package:jitsi_meet_flutter_sdk/jitsi_meet_flutter_sdk.dart';
 
 
-class AppointmentDetailForDoctorScreen extends StatelessWidget {
+class AppointmentDetailForDoctorScreen extends StatefulWidget {
   final int patientID;
   final String patientName;
   final String gender;
@@ -50,12 +51,17 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
           key: key,
         );
 
+  @override
+  State<AppointmentDetailForDoctorScreen> createState() => _AppointmentDetailForDoctorScreenState();
+}
+
+class _AppointmentDetailForDoctorScreenState extends State<AppointmentDetailForDoctorScreen> {
   Future<void> cancelAppointment(
     String appointmentId,
     String token,
   ) async {
-    debugger();
-    final url = 'https://api.doctari.com/appointment/full/$appointmentId';
+    // debugger();
+    final url = '${Constant.cancelAppointmentUrl}$appointmentId/';
 
     final response = await http.patch(
       Uri.parse(url),
@@ -67,13 +73,20 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
     );
 
     if (response.statusCode == 200) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Appointment canceled successfully',
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.black,
+        ),
+      );
       print('Appointment canceled successfully');
     } else {
       print('Failed to cancel appointment: ${response.body}');
     }
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +94,7 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
     String? userId = SessionManager.getUserId();
     String? userToken = SessionManager.getUserToken();
     int userIdv = int.parse(userId!);
-    debugPrint("Appointment Id: $appiontmentId");
+    debugPrint("Appointment Id: ${widget.appiontmentId}");
 
     print("$userIdv");
     print("$userToken");
@@ -148,7 +161,7 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
               //   style: theme.textTheme.titleLarge,
               // ),
               SizedBox(height: 8.v),
-              Text("$appointmentReason", style: TextStyle(color: Colors.black)),
+              Text("${widget.appointmentReason}", style: TextStyle(color: Colors.black)),
               SizedBox(height: 5.v),
             ],
           ),
@@ -214,7 +227,7 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "$patientName",
+                  "${widget.patientName}",
                   style: theme.textTheme.titleMedium,
                 ),
                 SizedBox(height: 9.v),
@@ -226,7 +239,7 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 8.v),
                 Text(
-                  "${AppLocalizations.of(context)!.dateofBirthDoctorProfileScrenSC}: $patientDob",
+                  "${AppLocalizations.of(context)!.dateofBirthDoctorProfileScrenSC}: ${widget.patientDob}",
                   style: CustomTextStyles.titleSmallBluegray700,
                 ),
                 SizedBox(height: 10.v),
@@ -266,10 +279,10 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
 
           Navigator.push(context, MaterialPageRoute(builder: (context) {
             return ChatPage(
-              receiverUserId: patientID.toString(),
-              receiverUserName: patientName,
+              receiverUserId: widget.patientID.toString(),
+              receiverUserName: widget.patientName,
               currentUserId: doctorId.toString(),
-              currentUserName: doctorName,
+              currentUserName: widget.doctorName,
             );
           }));
         },
@@ -328,7 +341,7 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
         buttonStyle: CustomButtonStyles.fillGray,
         onPressed: () async {
           const String defaultRoomName = 'DifferentTerrainsConflictEither';
-        await MeetingService().joinMeeting(defaultRoomName, doctorName, doctorEmail);
+        await MeetingService().joinMeeting(defaultRoomName, widget.doctorName, widget.doctorEmail);
 
         },
       ),
@@ -350,11 +363,11 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
   Widget _buildCancel(BuildContext context) {
     return CustomElevatedButton(
       onPressed: () async {
-        debugPrint("Cancel Appointment click");
+        debugPrint("Cancel Appointment clicked");
         String? userToken = SessionManager.getUserToken();
 
          await cancelAppointment(
-          appiontmentId.toString(),
+          widget.appiontmentId.toString(),
           userToken!,
         );
       },
@@ -373,7 +386,7 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => DateAndAppointment(appointmentId: appiontmentId.toString(),),
+              builder: (context) => DateAndAppointment(appointmentId: widget.appiontmentId.toString(),),
             ));
       },
       height: 54.v,
@@ -417,9 +430,10 @@ class AppointmentDetailForDoctorScreen extends StatelessWidget {
           ),
         ],
       );
+
   //here create custom widget for profile image
   Widget profileImage(BuildContext context) {
-    final String? profileImage = profile;
+    final String? profileImage = widget.profile;
 
     return Container(
       decoration: BoxDecoration(
