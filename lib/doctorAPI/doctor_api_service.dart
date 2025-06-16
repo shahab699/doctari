@@ -356,7 +356,6 @@ Future<List<DoctorSpecializationDropdownItem>> fetchSpeciality() async {
     'Authorization':
         'stJWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6InBhdGllbnRAZG9jdGFyaS5jb20iLCJleHAiOjE2MjkyODk2NzIsImVtYWlsIjoicGF0aWVudEBkb2N0YXJpLmNvbSIsIm9yaWdfaWF0IjoxNjI5MTE2ODcyfQ.WTziiMD_F21SLdfLhswTUy8eYC_gqzI6joIBA6qoGOo',
     'Content-Type': 'application/json',
-    'Authorization': 'Basic Og==',
   };
 
   try {
