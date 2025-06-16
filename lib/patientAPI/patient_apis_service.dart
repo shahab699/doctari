@@ -804,7 +804,6 @@ class PatientApiService {
       'Authorization':
           'stJWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MjYwNDgzLCJpYXQiOjE3MTUwMDEyODMsImp0aSI6ImQwNGFmMWM2NGMzOTRkZDRhZjI0MzAwNGFjNTg5ZTM5IiwidXNlcl9pZCI6MjU4fQ.CrrgA-rUDXs7YjJVF4APOualogQq_-W_amW0NVqVuig',
       'Content-Type': 'application/json',
-      'Authorization': 'Basic Og==',
     };
 
     try {
